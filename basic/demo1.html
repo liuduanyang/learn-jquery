@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery基础</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .all{
+            width:1000px;
+            margin:0 auto;
+            text-align: center;
+        }
+        .all::after{
+            content:'';
+            display:table;
+            clear:both;
+        }
+        .label{
+            width:150px;
+            height:200px;
+            border:1px solid black;
+            float:left;
+            margin-left:20px;
+            margin-top:20px;
+            line-height:200px;
+            box-sizing:border-box;
+        }
+        .list{
+            width:850px;
+            margin:0 auto;
+        }
+        .label:hover{
+            color:white;
+            background-color:orangered;
+        }
+    </style>
+    <script src="../jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="all">
+        <div class="list">
+        <h1>单击删除你不喜欢的标签</h1>
+        <div class="label">死肥宅</div>
+        <div class="label">吃货</div>
+        <div class="label">冬眠爱好者</div>
+        <div class="label">no speak</div>
+        <div class="label">Gamer</div>
+        <div class="label">懒</div>
+        <div class="label">贪</div>
+        <div class="label">吃货</div>
+        <div class="label">死肥宅</div>
+        <div class="label">吃货</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $(".label").click(function(){
+                $(this).hide();
+            });
+        });
+    </script>
+</body>
+</html>
