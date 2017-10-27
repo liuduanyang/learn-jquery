@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- 选择器 -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>丰富的选择器</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        li{
+            list-style:none;
+        }
+        .all{
+        width:1000px;
+        margin:0 auto;
+        text-align: center;
+        }
+        .list{
+            height:30px;
+            line-height:30px;
+        }
+    </style>
+    <script src="../jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="all">
+        <h1>选中你最喜欢的水果！</h1>
+        <ul>
+            <li class="list list1">橘子</li>
+            <li class="list">香橙</li>
+            <li class="list">苹果</li>
+            <li class="list">香蕉</li>
+            <li name="fav" class="list">火龙果</li>
+            <li class="list">西瓜</li>
+            <li name="fav" class="list">蜜桃</li>
+            <li class="list">猕猴桃</li>
+        </ul>
+    </div>
+    <script>
+        $(document).ready(function(){
+            // 元素选择器
+            // 选取所有h1元素
+            $("h1").hover(function(){
+                $("h1").css("background-color","orangered"); 
+            });
+            $("h1").mouseout(function(){
+                $("h1").css("background-color","white"); 
+            });
+
+            //选取所有 class="list1"的元素
+            $(".list1").hover(function(){
+                $(".list1").css("background-color","orangered"); 
+            });
+            $(".list1").mouseout(function(){
+                $(".list1").css("background-color","white"); 
+            });
+            //$("#demo")  $("li.demo") 同
+
+            // 属性选择器
+            $("[name='fav']").hover(function(){
+                $("[name='fav']").css("background-color","orangered"); 
+            });
+            $("[name='fav']").mouseout(function(){
+                $("[name='fav']").css("background-color","white"); 
+            });            
+            /*
+            $("[href]") 选取所有带有 href 属性的元素。
+            $("[href='#']") 选取所有带有 href 值等于 "#" 的元素。
+            $("[href!='#']") 选取所有带有 href 值不等于 "#" 的元素。
+            $("[href$='.jpg']") 选取所有 href 值以 ".jpg" 结尾的元素。
+            */
+
+            /*
+            补充：
+            $("ul li:first")	每个 <ul> 的第一个 <li> 元素
+            $(this)	            当前 HTML 元素
+            全部选择器：
+            http://www.w3school.com.cn/jquery/jquery_ref_selectors.asp
+            */
+            
+        });
+    </script>
+</body>
+</html>
